@@ -6,13 +6,15 @@
 
 ## Features
 
-This is a work in progress, currently most '.mon' features are handled.
+Supported Formats:
+* .mon (Monitor files)
+* .con (Contingency files)
+* .sub (Subsystem files)
+* .inch (Interconnection Change files)
+* _comm (PGScript files)
+
 Planned Scope:
-.mon
-.con
-.sub
-_comm
-.log
+* .log (Log files)
 
 ## Requirements
 
@@ -27,6 +29,10 @@ BUSNAMES, BUSNUMBERS, BRANCHNAMES will not work when nested inside other definit
 
 
 ## Release Notes
+
+### 0.6.0
+
+Added support for INCH (Incremental Change) files
 
 ### 0.5.0
 
