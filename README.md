@@ -13,6 +13,9 @@ Supported Formats:
 * .inch (Interconnection Change files)
 * _comm (PGScript files)
 
+Supported Python Libraries:
+* **pyTARA API** – 50+ code snippets and full IntelliSense with method signatures, parameter hints, and documentation
+
 Planned Scope:
 * .log (Log files)
 
@@ -30,9 +33,13 @@ BUSNAMES, BUSNUMBERS, BRANCHNAMES will not work when nested inside other definit
 
 ## Release Notes
 
+### 0.7.0
+
+Added support for Added pyTARA support for syntax highlighting as well as pylance autocomplete
+
 ### 0.6.0
 
-Added support for INCH (Incremental Change) files
+Added support for INCH (Incremental Change) syntax highlighting and folding
 
 ### 0.5.0
 

@@ -4,7 +4,7 @@
   "displayName": "PowerGEM_vscode",
   "description": "Syntax Highlighting for various PowerGEM related formats",
   "icon": "icons/PGlogo.png",
-  "version": "0.5.0",
+  "version": "0.7.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/PowerGem/VSCodeExtension.git"
@@ -139,6 +139,10 @@
       {
         "language": "pg.cont",
         "path": "./cont-snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./pytara-snippets.json"
       }
     ]
   }
