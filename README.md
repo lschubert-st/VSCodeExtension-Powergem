@@ -33,6 +33,18 @@ BUSNAMES, BUSNUMBERS, BRANCHNAMES will not work when nested inside other definit
 
 ## Release Notes
 
+### 0.8.0
+
+Comprehensive TARA Directive (.dir) file support:
+- Complete syntax highlighting for directive files and options blocks
+- 50+ code snippets for all TARA option categories including:
+  - opt cont, opt EMS, opt screen (contingency analysis, EMS, and screening options)
+  - lfopt solve, lfopt adj, lfopt misc (load flow options)
+  - opt sced options (economic dispatch parameters)
+  - opt amb (multi-snapshot analysis with 6 subsections)
+- Full parameter documentation from TARA 2601 Manual Appendix A
+- Support for all directive file commands and syntax
+
 ### 0.7.0
 
 Added support for Added pyTARA support for syntax highlighting as well as pylance autocomplete
