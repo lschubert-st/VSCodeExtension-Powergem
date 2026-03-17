@@ -20,6 +20,9 @@
       "include": "#keywords"
     },
     {
+      "include": "#section-labels"
+    },
+    {
       "include": "#attribute-names"
     },
     {
@@ -65,7 +68,7 @@
       "patterns": [
         {
           "name": "meta.command-block.pg.dir",
-          "begin": "^\\s*(READ|PSSE|SUBSYS|CONT|MONIT|solve|fdec|stop|chdir)\\b",
+          "begin": "^\\s*(READ|PSSE|SUBSYS|CONT|MONIT|solve|fdec|stop|chdir|trlim|lfreview|warn|RPTManager)\\b",
           "end": "(?=^\\s*[a-z]|^\\s*[0-9]|^\\s*%|$)",
           "beginCaptures": {
             "1": {
@@ -90,7 +93,7 @@
       "patterns": [
         {
           "name": "entity.name.function.pg.dir",
-          "match": "\\b(%trace|%include|%run|%read|%save|%add)\\b"
+          "match": "\\b(%trace|%include|%run|%read|%save|%add|%exit)\\b"
         },
         {
           "name": "keyword.operator.pg.dir",
@@ -114,11 +117,19 @@
         }
       ]
     },
+    "section-labels": {
+      "patterns": [
+        {
+          "name": "keyword.other.section.pg.dir",
+          "match": "^\\s*(general|param|hourly|long|ems)\\b"
+        }
+      ]
+    },
     "attribute-names": {
       "patterns": [
         {
           "name": "entity.other.attribute-name.pg.dir",
-          "match": "^\\s+([A-Za-z][A-Za-z0-9_]*)\\b(?=\\s+[0-9])"
+          "match": "^\\s*([A-Za-z][A-Za-z0-9_]*)\\b(?=\\s+(?:\"[^\"]*\"|%?[A-Za-z_][A-Za-z0-9_]*|-?[0-9]+(?:\\.[0-9]+)?))"
         }
       ]
     },

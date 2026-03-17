@@ -6,6 +6,26 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [1.0.1]
+
+- Expanded TARA `.dir` language server with command-aware IntelliSense:
+  - Added command/directive metadata model for hover and completion (`READ`, `CONT`, `MONIT`, `solve`, `cont`, `lfreview`, `warn`, `trlim`, `RPTManager`, `%trace`, `%include`, `%save`, `%csv`, `%txt`, `%exit`, etc.)
+  - Added argument-aware command completions (for modes, formats, report types, and common file path placeholders)
+  - Added command argument diagnostics for invalid/missing operands and invalid report types
+  - Added quick fixes for common command issues (replace invalid token, wrap paths in quotes, insert missing required tokens)
+- Improved parameter completions:
+  - Insert snippets now include value placeholders/enum pickers and trailing inline parameter comments
+  - Added blank-line completion behavior for command and in-block parameter suggestions
+- Improved option block parsing and validation robustness:
+  - Maintained correct `opt amb` handling where single `0` acts as section separator, not block terminator
+  - Continued support for multi-zero terminators including `0 0 0 STOP`
+- Updated directive syntax highlighting and snippets:
+  - Added/updated highlighting for `trlim`, `lfreview`, `warn`, `RPTManager`, and `%exit`
+  - Improved parameter highlighting to work with or without leading indentation
+  - Added highlighting for `opt amb` section labels (`general`, `param`, `hourly`, `long`, `ems`)
+  - Added/expanded `.dir` snippets for `lfreview`, `warn`, `trlim`, `opt trlim`, and `RPTManager TrLim`
+  - Updated full option-block snippets to insert indented parameter lines by default for better readability
+
 ## [0.8.0]
 
 - Added comprehensive .dir (TARA Directive) file support with full syntax highlighting

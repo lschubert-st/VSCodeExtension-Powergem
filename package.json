@@ -2,9 +2,13 @@
   "name": "powergem-vscode",
   "publisher": "PowerGEM-VSCode",
   "displayName": "PowerGEM_vscode",
-  "description": "Syntax Highlighting for various PowerGEM related formats",
+  "description": "Syntax Highlighting and IDE Support for PowerGEM and TARA",
   "icon": "icons/PGlogo.png",
-  "version": "0.8.0",
+  "version": "1.0.1",
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:pg.dir"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/PowerGem/VSCodeExtension.git"
@@ -14,11 +18,21 @@
     "email": "djohnsonbaugh@power-gem.com"
   },
   "engines": {
-    "vscode": "^1.80.0"
+    "vscode": "^1.80.0",
+    "node": ">=16.0.0"
   },
   "categories": [
     "Programming Languages"
   ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "npm run compile-src && npm run compile-server",
+    "compile-src": "tsc -p ./tsconfig.json",
+    "compile-server": "tsc -p ./server/tsconfig.json",
+    "watch": "concurrently \"npm run watch-src\" \"npm run watch-server\"",
+    "watch-src": "tsc -w -p ./tsconfig.json",
+    "watch-server": "tsc -w -p ./server/tsconfig.json"
+  },
   "contributes": {
     "languages": [
       {
@@ -166,5 +180,16 @@
         "path": "./dir-snippets.json"
       }
     ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0",
+    "concurrently": "^8.0.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12"
   }
 }
